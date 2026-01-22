@@ -20,7 +20,7 @@ private:
 	sf::CircleShape m_snake;
 	float m_speed = 200.0f;
 
-	int m_score = 0;
+	int m_score = 0, m_goalScore = 10;
 	float m_timer = 0.f;
 
 	bool m_gameOver;

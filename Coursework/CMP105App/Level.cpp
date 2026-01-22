@@ -92,6 +92,7 @@ void Level::update(float dt)
 		//m_snake.setPosition({ window_Size.x * 0.5f, window_Size.y * 0.5f });
 		// wall hit -> game over
 		m_gameOver = true;
+		m_snake.setFillColor(sf::Color::White);
 		std::cout << "GAME OVER\n" << "Score: " << m_score;
 		std::cout << "\nTime: " << m_timer << " seconds\n";
 
@@ -102,6 +103,7 @@ void Level::update(float dt)
 
 		// wall hit -> game over
 		m_gameOver = true;
+		m_snake.setFillColor(sf::Color::White);
 		std::cout << "GAME OVER\n" << "Score: " << m_score;
 		std::cout << "\nTime: " << m_timer << " seconds\n";
 	}
@@ -119,6 +121,12 @@ void Level::update(float dt)
 		spawnFood();
 		m_speed *= 1.1f;
 		m_score += 1;
+	}
+
+	if (m_score == m_goalScore)
+	{
+		m_gameOver = true;
+		m_snake.setFillColor(sf::Color::Yellow);
 	}
 }
 
