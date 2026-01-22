@@ -11,6 +11,8 @@ public:
 	void update(float dt);
 	void render();
 
+	void spawnFood();
+
 private:
 	// Default functions for rendering to the screen.
 
@@ -18,8 +20,15 @@ private:
 	sf::CircleShape m_snake;
 	float m_speed = 200.0f;
 
+	int m_score = 0;
+	float m_timer = 0.f;
+
+	bool m_gameOver;
+
 	enum class Direction {UP, DOWN, LEFT, RIGHT};
 	Direction m_direction;
+
+	sf::CircleShape m_food;
 	
 
 };
